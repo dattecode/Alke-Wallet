@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transferencias | ALKE WALLET</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body class="min-vh-100 d-flex flex-column bg-primary-subtle">
+
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar navbar-dark bg-primary px-4">
+        <span class="navbar-brand mb-0 h1">ALKE WALLET</span>
+        <a href="../menu.html" class="btn btn-outline-light">
+          ⬅ Volver
+        </a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-grow-1 py-5 px-1">
+      <div class="container">
+
+        <section class="row justify-content-center g-4">
+
+          <!-- FORM TRANSFERENCIA -->
+          <article
+            class="col-md-5 card shadow-sm p-4"
+            style="max-width: 420px; width: 100%;"
+          >
+            <h3 class="text-center mb-4 text-primary-emphasis">
+              🔁 Transferir dinero
+            </h3>
+
+            <form id="transferForm">
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">
+                  Email destino
+                </label>
+                <input
+                  type="email"
+                  id="transferEmail"
+                  class="form-control"
+                  placeholder="ejemplo@email.com"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">
+                  Monto a transferir
+                </label>
+                <input
+                  type="number"
+                  id="transferAmount"
+                  class="form-control"
+                  min="1"
+                  placeholder="Ej: 300"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-danger w-100 fw-semibold"
+              >
+                Transferir
+              </button>
+            </form>
+
+            <hr />
+
+            <div class="text-center">
+              <p class="mb-1 fw-semibold">Saldo disponible</p>
+              <h4 class="text-success">
+                $ <span id="currentAmount">0</span>
+              </h4>
+            </div>
+          </article>
+
+          <!-- TABLA TRANSACCIONES -->
+          <article class="col-md-7">
+            <div
+              class="table-responsive shadow-sm"
+              style="max-height: 350px; overflow-y: auto;"
+            >
+              <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark position-sticky top-0">
+                  <tr>
+                    <th scope="col ">ID</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Fecha</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyTransfers">
+                  <!-- JS renderiza aquí -->
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary p-1">
+      <p class="text-center text-white">
+        &copy; 2026 ALKE WALLET. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script JS -->
+    <script src="../scripts/transactions.js"></script>
+  </body>
+</html>
