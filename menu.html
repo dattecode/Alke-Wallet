@@ -1,97 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ALKE WALLET</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALKE WALLET</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="./css/loginCss.css" />
+  <!-- CSS PROPIO (ruta correcta) -->
+  <link rel="stylesheet" href="/css/loginCss.css" />
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  </head>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
 
-  <body class="min-vh-100 d-flex flex-column">
+<body class="min-vh-100 d-flex flex-column bg-primary-subtle">
 
-    <!-- HEADER -->
-    <header>
-      <nav class="navbar navbar-dark bg-primary px-4">
-        <span class="navbar-brand mb-0 h1">ALKE WALLET</span>
-        <button class="btn btn-outline-light" id="logout">Cerrar sesión</button>
-      </nav>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-dark bg-primary px-4 shadow-sm">
+      <span class="navbar-brand fw-bold">ALKE WALLET</span>
+      <button class="btn btn-outline-light fw-semibold" id="logout">
+        Cerrar sesión
+      </button>
+    </nav>
+  </header>
 
-    <!-- MAIN -->
-    <main class="flex-grow-1 bg-primary-subtle py-5">
-      <div class="container">
+  <!-- MAIN -->
+  <main class="flex-grow-1 py-5 bg-primary">
+    <div class="container">
 
-        <!-- TÍTULO -->
-        <section class="text-center mb-5">
-          <h1 class="fw-bold text-primary-emphasis">Menú Principal</h1>
-        </section>
+      <!-- TÍTULO -->
+      <section class="text-center mb-4">
+        <h1 class="fw-bold text-white">
+          Menú Principal
+        </h1>
+        <p class=" text-white fw-semibold">
+          Gestiona tu saldo y movimientos
+        </p>
+      </section>
 
-        <div class="row g-4 justify-content-center">
+      <section class="row g-4 justify-content-center">
 
-          <!-- CARD USUARIO -->
-          <section class="col-md-5">
-            <article class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title mb-3">👤 Información del usuario</h5>
+        <!-- CARD USUARIO -->
+        <article class="col-12 col-md-5">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3 fw-bold">
+                👤 Información del usuario
+              </h5>
 
-                <p class="mb-1 fw-semibold">Nombre</p>
-                <p id="userName" class="text-muted"></p>
+              <p class="mb-1 fw-semibold text-muted">Nombre</p>
+              <p id="userName" class="fs-5"></p>
 
-                <p class="mb-1 fw-semibold">Email</p>
-                <p id="email" class="text-muted"></p>
+              <p class="mb-1 fw-semibold text-muted">Email</p>
+              <p id="email"></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD SALDO -->
+        <article class="col-12 col-md-5">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body text-center">
+
+              <h5 class="card-title fw-bold mb-3">
+                💰 Saldo disponible
+              </h5>
+
+              <h2 class="fw-bold text-success mb-4">
+                $ <span id="amount"></span>
+              </h2>
+
+              <div class="d-grid gap-3">
+                <a
+                  href="/components/deposit.html"
+                  class="btn btn-success fw-semibold"
+                >
+                  💰 Depositar
+                </a>
+
+                <a
+                  href="/components/sendMoney.html"
+                  class="btn btn-primary fw-semibold"
+                >
+                  🔁 Transferir
+                </a>
+
+                <a
+                  href="/components/transactions.html"
+                  class="btn btn-outline-secondary fw-semibold"
+                >
+                  📜 Ver transacciones
+                </a>
               </div>
-            </article>
-          </section>
 
-          <!-- CARD SALDO -->
-          <section class="col-md-5">
-            <article class="card shadow-sm">
-              <div class="card-body text-center">
-                <h5 class="card-title mb-3">💰 Saldo disponible</h5>
+            </div>
+          </div>
+        </article>
 
-                <h2 class="fw-bold text-success">
-                  $ <span id="amount"></span>
-                </h2>
+      </section>
+    </div>
+  </main>
 
-                <section class="d-flex gap-3 justify-content-center mt-4">
-                  <button class="btn btn-success px-4" id="deposit">
-                    Depositar
-                  </button>
-                  <button class="btn btn-danger px-4" id="transfer">
-                    Transferir
-                  </button>
-                </section>
-              </div>
-            </article>
-          </section>
-          <!-- CARD USERS -->
-        </div>
-      </div>
-    </main>
+  <!-- FOOTER -->
+  <footer class="bg-primary text-white text-center py-3 mt-auto">
+    &copy; 2026 ALKE WALLET. Todos los derechos reservados.
+  </footer>
 
-    <!-- FOOTER -->
-    <footer class="bg-primary text-white text-center py-3">
-      &copy; 2026 ALKE WALLET. Todos los derechos reservados.
-    </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Script JS -->
-    <script type="module" src="./scripts/menu.js"></script>
-  </body>
+  <!-- Script -->
+  <script type="module" src="/scripts/menu.js"></script>
+</body>
 </html>
