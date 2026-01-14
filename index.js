@@ -14,7 +14,6 @@ let moneyData = JSON.parse(localStorage.getItem("moneyData")) || {
 let userS = JSON.parse(localStorage.getItem("userS")) || [{
   userName: "",
   email: "",
-  password: ""
 }];
 
 const setDataItems = async (nameLocalDB, data) =>{
