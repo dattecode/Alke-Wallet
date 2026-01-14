@@ -11,6 +11,12 @@ let moneyData = JSON.parse(localStorage.getItem("moneyData")) || {
   deposit: [],
 };
 
+let userS = JSON.parse(localStorage.getItem("userS")) || [{
+  userName: "",
+  email: "",
+  password: ""
+}];
+
 const setDataItems = async (nameLocalDB, data) =>{
   localStorage.setItem(nameLocalDB, JSON.stringify(data));
 }
