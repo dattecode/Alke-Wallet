@@ -1,12 +1,21 @@
 $(document).ready(function () {
   const moneyData = JSON.parse(localStorage.getItem("moneyData"));
-  const container = $("#transactionsContainer");
 
-  if (!moneyData) return;
+  const container = $("#transactionsContainer");
+  $("#availableBalance").text(`$ ${moneyData.amount}`);
+
+  if (!moneyData) {
+    container.html(`<p class="text-center text-muted">No hay datos</p>`);
+    return;
+  }
+
+  // 👇 ADAPTADO A TU ESTRUCTURA REAL
+  const deposits = moneyData.deposit || [];
+  const transfers = moneyData.tranfers || [];
 
   const allTransactions = [
-    ...(moneyData.deposits || []).map(d => ({ ...d, type: "deposit" })),
-    ...(moneyData.transfers || []).map(t => ({ ...t, type: "transfer" }))
+    ...deposits.map(d => ({ ...d, type: "deposit" })),
+    ...transfers.map(t => ({ ...t, type: "transfer" }))
   ];
 
   if (allTransactions.length === 0) {
@@ -16,19 +25,27 @@ $(document).ready(function () {
 
   allTransactions.forEach(tx => {
     container.append(`
-      <div class="transaction-card ${tx.type}">
-        <div class="transaction-title">
-          ${tx.type === "deposit" ? "Depósito 💰" : "Transferencia 💸"}
-        </div>
+      <div class="card shadow-sm mb-3 border-0">
+        <div class="card-body d-flex justify-content-between align-items-center">
 
-        <div class="transaction-amount">
-          $ ${tx.amount}
-        </div>
+          <div>
+            <h6 class="mb-1 fw-bold">
+              ${tx.type === "deposit" ? "Depósito 💰" : "Transferencia 💸"}
+            </h6>
 
-        ${tx.email ? `<div>Email: ${tx.email}</div>` : ""}
+            ${tx.email ? `<small class="text-muted">${tx.email}</small><br>` : ""}
 
-        <div class="transaction-date">
-          ${new Date(tx.date).toLocaleDateString()}
+            <small class="text-muted">
+              ${tx.date}
+            </small>
+          </div>
+
+          <div class="fw-bold fs-5 ${
+            tx.type === "deposit" ? "text-success" : "text-danger"
+          }">
+            $ ${tx.amount}
+          </div>
+
         </div>
       </div>
     `);

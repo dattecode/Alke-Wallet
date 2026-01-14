@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transacciones | ALKE WALLET</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transacciones | ALKE WALLET</title>
 
-  <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../styles/transactions.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/transactions.css" />
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-</head>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
 
-<body class="bg-primary-subtle min-vh-100 d-flex flex-column">
+  <body class="bg-primary-subtle min-vh-100 d-flex flex-column">
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar navbar-dark bg-primary px-4">
+        <span class="navbar-brand">ALKE WALLET</span>
+        <a href="../menu.html" class="btn btn-outline-light">⬅ Volver</a>
+      </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <nav class="navbar navbar-dark bg-primary px-4">
-      <span class="navbar-brand">ALKE WALLET</span>
-      <a href="../menu.html" class="btn btn-outline-light">⬅ Volver</a>
-    </nav>
-  </header>
+    <!-- MAIN -->
+    <main class="flex-grow-1 py-4">
+      <div class="container">
+        <div class="bg-white px-1 py-2 rounded shadow-sm text-center mb-4">
+          <small class="text-muted">Saldo disponible</small>
+          <div id="availableBalance" class="fs-4 fw-bold text-success">$ 0</div>
+        </div>
+        <h3 class="text-center mb-4 text-primary-emphasis">
+          📜 Historial de transacciones
+        </h3>
 
-  <!-- MAIN -->
-  <main class="flex-grow-1 py-4">
-    <div class="container">
-
-      <h3 class="text-center mb-4 text-primary-emphasis">
-        📜 Historial de transacciones
-      </h3>
-
-      <div class="transactions-container" id="transactionsContainer">
-        <!-- JS renderiza cards -->
+        <div class="transactions-container" id="transactionsContainer">
+          <!-- JS renderiza cards -->
+        </div>
       </div>
+    </main>
 
-    </div>
-  </main>
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3">
+      &copy; 2026 ALKE WALLET
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="bg-primary text-white text-center py-3">
-    &copy; 2026 ALKE WALLET
-  </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script -->
-  <script src="../scripts/transactions.js"></script>
-</body>
+    <!-- Script -->
+    <script src="../scripts/transactions.js"></script>
+  </body>
 </html>
