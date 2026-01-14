@@ -19,7 +19,7 @@ $(document).ready(function () {
   ];
 
   if (allTransactions.length === 0) {
-    container.html(`<p class="text-center text-muted">No hay transacciones</p>`);
+    container.html(`<p class="text-center text-white">No hay transacciones</p>`);
     return;
   }
 

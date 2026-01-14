@@ -105,7 +105,7 @@ function renderUsers(users) {
 
   if (users.length === 0) {
     container.append(`
-      <div class="col-12 text-center text-muted">
+      <div class="col-12 text-center text-white">
         No hay usuarios creados
       </div>
     `);
